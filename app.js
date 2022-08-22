@@ -20,6 +20,7 @@ app.use(passport.initialize())
 require('./middleware/passport')(passport)
 
 app.use(morgan('dev'))
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParer.urlencoded({extended: true}))
 app.use(bodyParer.json())
 app.use(cors())
